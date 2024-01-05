@@ -1,4 +1,4 @@
-const API_URL = "https://fakestoreapi.com/"
+export const API_URL = "https://fakestoreapi.com"
 
 export const registerUser = async (userObj) => {
  try {
@@ -43,17 +43,17 @@ export const loginUser = async (userObj) => {
     }
 };
 
-export const getUser = async (token) => {
-    try {
-        const res = await fetch(`${API_URL}/users/1`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        });
-        const json = await res.json();
-        return json;
-    } catch (error) {
-        console.log(error);
-    }
-};
+// export const getUser = async (token, id) => {
+//     try {
+//         const res = await fetch(`${API_URL}/users/${id}`, {
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 Authorization: `Bearer ${token}`,
+//             },
+//         });
+//         const json = await res.json();
+//         return json;
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };

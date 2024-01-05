@@ -7,7 +7,6 @@ export default function NavBar({ token, setToken, setUser }) {
             <Link to="/">Home</Link> |
             {!token && <Link to="/login">Login</Link>} |
             {!token && <Link to="/register">Register</Link>} |
-            <Link to="/cart">Cart</Link> |
             {token && (
                 <Link 
                   to="/login" 

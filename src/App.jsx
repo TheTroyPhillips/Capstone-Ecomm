@@ -2,10 +2,11 @@ import { useState, useEffect } from "react"
 import Register from "./components/Register"
 import Login from "./components/Login"
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import { getUser } from "./API";
+// import { getUser } from "./API";
 import NavBar from "./components/NavBar";
-
-const API_URL = "https://fakestoreapi.com/";
+import Home from "./components/Home";
+import SingleProduct from "./components/SingleProduct";
+import { API_URL } from "./API";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -55,6 +56,10 @@ useEffect(() => {
     <BrowserRouter>
       <NavBar token={token} setToken={setToken} setUser={setUser} />
       <Routes>
+        <Route
+          path="/" element={<Home products={products} fetchProducts={fetchProducts} />} />
+        <Route
+          path="/products/:id" element={<SingleProduct user={user} token={token} />} />
         <Route
           path="/login" element={<Login setToken={setToken} />} />
         <Route
